@@ -13,6 +13,7 @@ import { LoginComponent } from './components/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TokenInterceptor } from './interceptor/token.interceptor';
 import { ExperienceComponent } from './components/experience/experience.component';
+import { CrashtestComponent } from './components/crashtest/crashtest.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ExperienceComponent } from './components/experience/experience.componen
     FooterComponent,
     LoginComponent,
     ExperienceComponent,
+    CrashtestComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,32 +1,44 @@
 <main>
     <section>
         <article>
-            <div class="scene">
-                <div class="cube" [ngClass]="changeSide()">
-                   <div class="cube__face cube__face--front" id="front"></div>
-                   <div class="cube__face cube__face--top" id="top"></div>
-                   <div class="cube__face cube__face--left" id="left">
-                        <div class="fog"></div>
-                    </div>
-                    <div class="cube__face cube__face--bottom" id="bottom"></div>
-                   <div class="cube__face cube__face--back" id="back"></div>
-                   <div class="cube__face cube__face--right" id="right">
-                        <div class="fog"></div>
-                   </div> 
-               </div>
-           </div>
-            <ul>
-                <li (mouseenter)="changeSide('html')" style='--i:9;'><a href="#">html</a></li>
-                <li (mouseenter)="changeSide('css')" style='--i:8;'><a href="#">css</a></li>
-                <li (mouseenter)="changeSide('js')" style='--i:7;'><a href="#">Javascript</a></li>
-                <li (mouseenter)="changeSide('angularJs')" style='--i:6;'><a href="#">AngularJs</a></li>
-                <li (mouseenter)="changeSide('angular')" style='--i:5;'><a href="#">Angular</a></li>
-                <li (mouseenter)="changeSide('vue')" style='--i:4;'><a href="#">Vue</a></li>
-                <li (mouseenter)="changeSide('php')" style='--i:3;'><a href="#">Php</a></li>
-                <li (mouseenter)="changeSide('python')" style='--i:2;'><a href="#">Python</a></li>
-                <li (mouseenter)="changeSide('django')" style='--i:1;'><a href="#">Django</a></li>
-            </ul>
-          
+            <h1> Languages </h1>
+            <div>
+                <div>
+                    <h2> Front-End </h2>
+                    <ul>
+                        <li><span class="lg_logo_html"></span><p>Html</p></li>
+                        <li><span class="lg_logo_css"></span><p>Css</p></li>
+                        <li><span class="lg_logo_js"></span><p>Javascript</p></li>
+                        <li><span class="lg_logo_ngjs"></span><p>AngularJs</p></li>
+                        <li><span class="lg_logo_ng"></span><p>Angular</p></li>
+                        <li><span class="lg_logo_vue"></span><p>VueJs</p></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2> Back-End </h2>
+                    <ul>
+                        <li><span class="lg_logo_php"></span><p>Php</p></li>
+                        <li><span class="lg_logo_python"></span><p>Python</p></li>
+                        <li><span class="lg_logo_sql"></span><p>Sql</p></li>
+                        <li><span class="lg_logo_django"></span><p>Django</p></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2> Autodidact </h2>
+                    <ul>
+                        <li><span class="lg_logo_ng"></span><p>Angular</p></li>
+                        <li><span class="lg_logo_docker"></span><p>Docker</p></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2> Outils </h2>
+                    <ul>
+                        <li><span class="lg_logo_postman"></span><p>Postman</p></li>
+                        <li><span class="lg_logo_github"></span><p>Github</p></li>
+                        <li><span class="lg_logo_agile"></span><p>Agile</p></li>
+                    </ul>
+                </div>
+            </div>
         </article>
     </section>
 </main>
