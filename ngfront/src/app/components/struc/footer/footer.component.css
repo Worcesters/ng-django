@@ -1,0 +1,31 @@
+footer{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin: auto 6rem;
+    text-align: center;
+}
+app-footer{
+    margin-top: auto;
+    margin-bottom: 20px;
+}
+footer div{
+    width: 15vw;
+}
+footer div:nth-last-child(2) h4{
+    color: #2ee4cb;
+}
+footer div h4,h3{
+    text-transform: uppercase;
+    font-weight: lighter;
+}
+footer div h4{
+    margin: 1.5rem 0;
+}
+footer div div:last-child{
+    color: #2ee4cb;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 1.5rem;
+}

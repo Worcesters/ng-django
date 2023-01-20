@@ -1,5 +1,5 @@
 main{
-    margin: auto 3rem;
+    margin: auto 6rem;
 }
 main h1{
     font-size: 6rem;
@@ -21,31 +21,31 @@ main section{
     flex-direction: row;
     justify-content: space-between;
 }
-main section img{
+/* main section img{
     width: 600px;
     height: 610px;
     margin-right: 10vw;
     animation: float 2.5s ease-in-out infinite;
-}
-/* main section div.img{
-    background-image: url('/assets/img/realistic_phone-removebg-preview.png');
-    background-image: url('/assets/img/phonev3-removebg-preview.png');
-    background-size: contain;
-    width: 30vw;
-    background-repeat: no-repeat;
-    margin-right: 10vw;
 } */
+main section div.img{
+    background-image: url('/assets/img/realistic_phone-removebg-preview.png');
+    background-image: url('/assets/img/bg_home1.png');
+    background-size: contain;
+    width: 45vw;
+    background-repeat: no-repeat;
+}
 main section article{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 main section article div{
-    width: 30vw;
+    width: 35vw;
     margin: 1rem 0 4rem 0;
 }
 main section article div p{
     margin: 2rem 0;
+    letter-spacing: 2px;
 }
 main section article div div:last-child{
     border: solid 1px #3e3f46;

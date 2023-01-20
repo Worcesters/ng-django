@@ -6,7 +6,8 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 body{
-    background-color: #efefef;
+    background-color: #e7eded;
+    background-image: linear-gradient(to right, #efefef,#e7eded,#c5d8d5 );
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -16,59 +17,10 @@ app-root {
     flex-direction: column;
     min-height: 100vh;
 }
-header nav{
-    margin: 0 0 0 auto;
-    width: 80%;
-    display: flex;
-    justify-content: space-around;
-    height: 10vh;
-}
 
-header nav a{
-    padding: 15px 20px;
-    align-self: center;
-    text-decoration: none;
-    font-weight: 600;
-    color: #3e3f46;
-    cursor: pointer;
-}
+p{ color:#3e3f46; }
 
-header nav a:last-child{
-    color: #FFFFFF;
-    background-color: #2ee4cb;
-    border-radius: 2rem;
-
-}
-
-p{ text-align: justify; color:#3e3f46; }
-
-footer{
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    text-align: center;
-}
 app-footer{
     margin-top: auto;
     margin-bottom: 20px;
-}
-footer div{
-    width: 15vw;
-}
-footer div:nth-last-child(2) h4{
-    color: #2ee4cb;
-}
-footer div h4,h3{
-    text-transform: uppercase;
-    font-weight: lighter;
-}
-footer div h4{
-    margin: 1.5rem 0;
-}
-footer div div:last-child{
-    color: #2ee4cb;
-    font-weight: 600;
-    text-transform: uppercase;
-    cursor: pointer;
-    margin-top: 1.5rem;
 }
