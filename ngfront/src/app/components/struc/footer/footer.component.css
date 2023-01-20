@@ -14,10 +14,11 @@ footer div{
 }
 footer div:nth-last-child(2) h4{
     color: #2ee4cb;
+    font-weight: 600;
 }
 footer div h4,h3{
     text-transform: uppercase;
-    font-weight: lighter;
+    font-weight: 900;
 }
 footer div h4{
     margin: 1.5rem 0;
