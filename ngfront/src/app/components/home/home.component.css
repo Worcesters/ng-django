@@ -1,0 +1,68 @@
+main{
+    margin: auto 3rem;
+}
+main h1{
+    font-size: 6rem;
+}
+main h2{
+    text-transform: uppercase;
+    color: #2ee4cb;
+    font-size: 2.8rem;
+    font-weight: lighter;
+}
+main h3{
+    text-transform: uppercase;
+    color: #2ee4cb;
+    font-size: 2.0rem;
+    font-weight: 600;
+}
+main section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+main section img{
+    width: 600px;
+    height: 610px;
+    margin-right: 10vw;
+    animation: float 2.5s ease-in-out infinite;
+}
+/* main section div.img{
+    background-image: url('/assets/img/realistic_phone-removebg-preview.png');
+    background-image: url('/assets/img/phonev3-removebg-preview.png');
+    background-size: contain;
+    width: 30vw;
+    background-repeat: no-repeat;
+    margin-right: 10vw;
+} */
+main section article{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+main section article div{
+    width: 30vw;
+    margin: 1rem 0 4rem 0;
+}
+main section article div p{
+    margin: 2rem 0;
+}
+main section article div div:last-child{
+    border: solid 1px #3e3f46;
+    width: fit-content;
+    padding: 1rem 4rem;
+    border-radius: 2rem;
+    cursor: pointer;
+}
+
+@keyframes float{
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}

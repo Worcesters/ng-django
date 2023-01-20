@@ -1,9 +1,8 @@
 <header>
     <nav>
-        <a href="#">Home</a>
-        <a routerLink="language">Languages</a>
-        <a href="#">Society</a>
-        <a href="#">Experiences</a>
+        <a routerLink="home">Home</a>
+        <a routerLink="languages">Languages</a>
+        <a routerLink="experiences">Experiences</a>
         <a *ngIf="!isConnected" routerLink="login">Connexion</a>
         <a *ngIf="isConnected" (click)="logout()">Deconnexion</a>
     </nav>

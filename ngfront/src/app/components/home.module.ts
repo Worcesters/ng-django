@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
-import { CurriculumComponent } from './vitae/curriculum.component';
+import { HomeComponent } from './home/home.component';
 import { LanguageComponent } from './language/language.component';
+import { ExperienceComponent } from './experience/experience.component';
 import { LoginComponent } from './login/login.component';
 
-const curriculum: Routes = [
-  { path: 'curriculum', component: CurriculumComponent },
-  { path: 'language', component: LanguageComponent },
+const home: Routes = [
+  { path: 'home', component: HomeComponent },
+  { path: 'languages', component: LanguageComponent },
+  { path: 'experiences', component: ExperienceComponent },
   { path: 'login', component: LoginComponent }
 ]
 
@@ -15,7 +17,7 @@ const curriculum: Routes = [
   declarations: [],
   imports: [
     CommonModule,
-    RouterModule.forChild(curriculum)
+    RouterModule.forChild(home)
   ]
 })
-export class CurriculumModule { }
+export class HomeModule { }
