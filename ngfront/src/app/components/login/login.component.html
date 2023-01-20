@@ -1,0 +1,23 @@
+<main>
+    <section>
+        <div class="background">
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
+        <form [formGroup]="authform">
+            <h3>Login Here</h3>
+            <label for="username">Username</label>
+            <input type="text" placeholder="Username" id="Username" formControlName="username">
+
+            <label for="password">Password</label>
+            <input type="password" placeholder="Password" id="password" formControlName="password">
+
+            <button (click)="onLogin()">Log In</button>
+            <button (click)="onRegister()">Register</button>
+            <div class="social">
+            <div class="gh"><i class="fab fa-google"></i>  Github</div>
+            <div class="li"><i class="fab fa-facebook"></i>  LinkedIn</div>
+            </div>
+        </form>
+    </section>
+</main>
