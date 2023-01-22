@@ -2,7 +2,7 @@ footer{
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    margin: auto 6rem;
+    margin: auto 6vw;
     text-align: center;
 }
 app-footer{

@@ -25,6 +25,7 @@ class LoginView( APIView ):
         else:
             return Response( status=status.HTTP_401_UNAUTHORIZED )
 
+
 class TokenValidationView(APIView):
     permission_classes = (permissions.AllowAny,)
 
