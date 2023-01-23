@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 import { Observable, of, throwError, BehaviorSubject } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
+import { Observable, of, throwError, BehaviorSubject } from 'rxjs';
+import { tap, catchError } from 'rxjs/operators';
 import { UserType, UserApiType, baseUrl } from '../models/login.model';
 import { Router } from '@angular/router';
 import { NotificationService } from './notification.service';
@@ -23,6 +25,8 @@ interface LoginResponse {
 })
 
 export class UserService {
+
+    private loginStatus$ = new BehaviorSubject<boolean>(false);
 
     private loginStatus$ = new BehaviorSubject<boolean>(false);
 
@@ -57,7 +61,21 @@ export class UserService {
     getLoginStatus() {
         return this.loginStatus$.asObservable();
     }
+    setLoginStatus(status: boolean) {
+        this.loginStatus$.next(status);
+    }
 
+    getLoginStatus() {
+        return this.loginStatus$.asObservable();
+    }
+
+    logoutUser(): Observable<any> {
+		// Remove the token from the local storage
+		localStorage.removeItem( 'token' );
+		this.setLoginStatus(false);
+		this.router.navigate( ['/login'] );
+		return of(null);
+    }
     logoutUser(): Observable<any> {
 		// Remove the token from the local storage
 		localStorage.removeItem( 'token' );
@@ -73,3 +91,4 @@ export class UserService {
   }
 	
 }
+

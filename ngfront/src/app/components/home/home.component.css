@@ -68,3 +68,9 @@ main section article div div:last-child{
         width: 100%;
     }
 }
+
+@media screen and (max-width: 1920px) {
+    main section div.img{
+        width: 35vw;
+    }
+}
