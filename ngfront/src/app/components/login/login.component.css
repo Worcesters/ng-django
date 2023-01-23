@@ -14,8 +14,8 @@
 }
 .shape:first-child{
     background: linear-gradient(
-        #1845ad,
-        #23a2f6
+        #10928c,
+        #2ee4cb
     );
     left: -80px;
     top: -80px;
@@ -23,8 +23,8 @@
 .shape:last-child{
     background: linear-gradient(
         to right,
-        #ff512f,
-        #f09819
+        #8a4ccc,
+        #d25aef
     );
     right: -30px;
     bottom: -80px;
@@ -32,7 +32,6 @@
 section{
     display: flex;
     justify-content: center;
-    margin: 10vh 0 20vh 0;
     position: relative;
 }
 form{
@@ -52,7 +51,7 @@ form *{
     border: none;
 }
 form button{
-    color: #2ee4cb;
+    color: #000;
 }
 form h3{
     font-size: 32px;
@@ -95,6 +94,7 @@ button{
 .social{
   margin-top: 30px;
   display: flex;
+  justify-content: space-between;
 }
 .social div{
   background: red;
