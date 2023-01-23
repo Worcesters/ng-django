@@ -40,7 +40,11 @@ main section article div ul li{
     background: #ffffff;
 }
 main section article div ul li span {
-    background-color: #2e3133;
+    background: linear-gradient(
+        to right,
+        #2d998f,
+        #20c960
+    );
     min-height: 50px;
     align-self: center;
     width: 50px;

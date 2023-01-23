@@ -35,20 +35,28 @@ main section article{
 }
 main section article div{
     width: 35vw;
-    margin: 1rem 0 4rem 0;
+    margin: 1.5vh 0 5vh 0;
 }
 main section article div p{
-    margin: 2rem 0;
+    margin: 3vh 0;
     letter-spacing: 2px;
+    align-items: center;
 }
 main section article div div:last-child{
     border: solid 1px #3e3f46;
     width: fit-content;
-    padding: 1rem 4rem;
+    padding: 1.5vh 5vh;
     border-radius: 2rem;
     cursor: pointer;
 }
-
+main section:last-of-type article{
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+main section:last-of-type article div{
+    width: 28vw;
+    margin: 0 0 2.5vh 0;
+}
 @keyframes float{
     0% {
         transform: translateY(0);
