@@ -2,7 +2,7 @@ footer{
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    margin: auto 6rem;
+    margin: auto 6vw;
     text-align: center;
 }
 app-footer{
@@ -29,4 +29,12 @@ footer div div:last-child{
     text-transform: uppercase;
     cursor: pointer;
     margin-top: 1.5rem;
+}
+@media screen and (min-width: 320px) and (max-width: 600px) {
+    footer{
+        flex-wrap: wrap;
+    }
+    footer div {
+        width: unset;
+    }
 }

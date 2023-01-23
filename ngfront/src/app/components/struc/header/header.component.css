@@ -21,3 +21,8 @@ header nav a:last-child{
     background-color: #2ee4cb;
     border-radius: 2rem;
 }
+@media screen and (min-width: 320px) and (max-width: 600px) {
+    header nav{
+        display: none;
+    }
+}

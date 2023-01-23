@@ -1,24 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald:400,700');
 
 
-main{
-    margin: auto 6rem;
-}
-main h1{
-    font-size: 6rem;
-}
-main h2{
-    text-transform: uppercase;
-    color: #2ee4cb;
-    font-size: 2.8rem;
-    font-weight: lighter;
-}
-main h3{
-    text-transform: uppercase;
-    color: #2ee4cb;
-    font-size: 2.0rem;
-    font-weight: 600;
-}
 main section{
     display: flex;
     flex-direction: row;

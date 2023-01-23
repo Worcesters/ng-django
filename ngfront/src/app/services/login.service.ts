@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
-import { Observable, of, throwError } from 'rxjs';
-import { tap, catchError, map } from 'rxjs/operators';
+import { Observable, of, throwError, BehaviorSubject } from 'rxjs';
+import { tap, catchError } from 'rxjs/operators';
 import { UserType, UserApiType, baseUrl } from '../models/login.model';
 import { Router } from '@angular/router';
+import { NotificationService } from './notification.service';
 
 const httpOptions= {
 	headers : new HttpHeaders({
@@ -23,35 +24,47 @@ interface LoginResponse {
 
 export class UserService {
 
-	constructor( private router: Router, private http: HttpClient ) { }
+    private loginStatus$ = new BehaviorSubject<boolean>(false);
+
+	constructor(private notificationService: NotificationService, private router: Router, private http: HttpClient ) { }
 
 	loginUser( loginForm: UserType ): Observable<any> {
 
 		let payload: UserApiType = { username: loginForm.username, password: loginForm.password }
-		console.log(payload)
 
 		return this.http.post<LoginResponse>( baseUrl + 'login', payload, httpOptions ).pipe(
 		  tap( ( response: LoginResponse ) => {
-				console.log(response)
 				if( response.status === 200 ){
 					localStorage.setItem( 'token', response.token );
-					this.router.navigate( ['/curriculum'] );
+					this.router.navigate( ['/home'] );
+					this.setLoginStatus(true);
+					this.notificationService.success('Bienvenue '+payload.username, 'Connexion Réussi')
 				}
 		  }),
 		  catchError( error => {
 				// handle the error here
-				return throwError(() => error);
+				this.notificationService.error("Une erreur est survenue Veuillez verifier vos identifiants",'Erreur lors de la connexion')
+				return throwError(
+					() => error);
 		  })
 		);
 	}
 
+    setLoginStatus(status: boolean) {
+        this.loginStatus$.next(status);
+    }
 
-	logout() {
-    // Remove the token from the local storage
-    localStorage.removeItem( 'token' );
-    let token = null;
-		return token
-  }
+    getLoginStatus() {
+        return this.loginStatus$.asObservable();
+    }
+
+    logoutUser(): Observable<any> {
+		// Remove the token from the local storage
+		localStorage.removeItem( 'token' );
+		this.setLoginStatus(false);
+		this.router.navigate( ['/login'] );
+		return of(null);
+    }
 	
 
 	registerVisitor( loginForm: UserType ): Observable<any> {
@@ -59,5 +72,4 @@ export class UserService {
 		return this.http.post( baseUrl + 'visitor/', payload );
   }
 	
-
 }

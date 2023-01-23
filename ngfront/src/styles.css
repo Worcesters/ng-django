@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~ngx-toastr/toastr";
+
 *{
     margin: 0;
     padding: 0;
@@ -23,4 +25,50 @@ p{ color:#3e3f46; }
 app-footer{
     margin-top: auto;
     margin-bottom: 20px;
+}
+main{
+    min-height: 75vh;
+    margin: auto 6vw;
+}
+main h1{
+    font-size: 6rem;
+}
+main h2{
+    text-transform: uppercase;
+    color: #2ee4cb;
+    font-size: 2.8rem;
+    font-weight: lighter;
+}
+main h3{
+    text-transform: uppercase;
+    color: #2ee4cb;
+    font-size: 2.0rem;
+    font-weight: 600;
+}
+@media screen and (max-width: 1920px) {
+    main section article p {
+        font-size: 12px;
+    }
+}
+@media screen and (max-width: 980px) {
+    main h1{
+        font-size: 5rem;
+    }
+    main h2{
+        font-size: 1.8rem;
+    }
+    main h3{
+        font-size: 1.0rem;
+    }
+}
+@media screen and (min-width: 320px) and (max-width: 600px) {
+    main h1{
+        font-size: 3rem;
+    }
+    main h2{
+        font-size: 1.4rem;
+    }
+    main h3{
+        font-size: 1.0rem;
+    }
 }

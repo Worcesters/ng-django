@@ -14,6 +14,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { TokenInterceptor } from './interceptor/token.interceptor';
 import { ExperienceComponent } from './components/experience/experience.component';
 import { CrashtestComponent } from './components/crashtest/crashtest.component';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { CrashtestComponent } from './components/crashtest/crashtest.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
     ReactiveFormsModule
   ],
   exports:[],
