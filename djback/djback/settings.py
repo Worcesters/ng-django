@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
+#import django_heroku
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,6 +26,7 @@ SECRET_KEY = 'django-insecure-@j8)z8stx+g@^2-3l)@g=vw4rq8&gv$$%1k*m$n=rk*v&0_kz(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# ALLOWED_HOSTS = ['gfg-tutorial.herokuapp.com']
 ALLOWED_HOSTS = []
 
 #CORS_ORIGIN_ALLOW_ALL: If True, all origins will be accepted (not use the whitelist below). Defaults to False.
@@ -111,6 +113,16 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': '<DATABASE>',
+#         'USER': '<USER>',
+#         'PASSWORD': '<PASSWORD>',
+#         'HOST': '<HOST>',
+#         'PORT': '5432',
+#     }
+# }
 
 
 # Password validation
@@ -148,6 +160,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+django_heroku.settings(locals())
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
