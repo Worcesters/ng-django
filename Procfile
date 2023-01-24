@@ -1,1 +1,1 @@
-web: gunicorn ng-django.wsgi:application
+web: gunicorn portfolio-ngdjango.wsgi:application
