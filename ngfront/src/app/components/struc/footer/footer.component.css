@@ -11,17 +11,23 @@ app-footer{
 }
 footer div{
     width: 15vw;
+    font-size: small;
+}
+footer div div p{
+    text-transform: none;
+    font-weight: 600;
 }
 footer div:nth-last-child(2) h4{
     color: #2ee4cb;
     font-weight: 600;
 }
-footer div h4,h3{
+footer div div, footer div h4,h3{
     text-transform: uppercase;
     font-weight: 900;
 }
 footer div h4{
     margin: 1.5rem 0;
+    cursor: pointer;
 }
 footer div div:last-child{
     color: #2ee4cb;
@@ -29,6 +35,15 @@ footer div div:last-child{
     text-transform: uppercase;
     cursor: pointer;
     margin-top: 1.5rem;
+}
+
+@media screen and (max-width: 980px) {
+    footer div h4,footer div div, footer div div p{
+        display: none;
+    }
+    footer div h3{
+        font-size: 0.7rem;
+    }
 }
 @media screen and (min-width: 320px) and (max-width: 600px) {
     footer{
