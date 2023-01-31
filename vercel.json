@@ -22,7 +22,7 @@
         "dest": "ngfront/dist/index.html"
       },
       {
-        "src": "/api/(.*)",
+        "src": "/ng-django/(.*)",
         "dest": "djback/manage.py runserver 0.0.0.0:${VERCEL_REGION_PORT}"
       }
     ]
