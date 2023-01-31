@@ -19,10 +19,10 @@
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "ngfront/dist/index.html"
+        "dest": "ngfront/src/index.html"
       },
       {
-        "src": "/ng-django/(.*)",
+        "src": "/(.*)",
         "dest": "djback/manage.py runserver 0.0.0.0:${VERCEL_REGION_PORT}"
       }
     ]
