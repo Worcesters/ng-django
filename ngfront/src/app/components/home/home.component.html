@@ -21,6 +21,10 @@
                 <div (click)="fakeButton()"> VOIR INFOS </div>
             </div>
         </article>
-        <div class="img"></div>
+        <img src="../../../assets/img/bg_home1.png" 
+        class="sliding-image" 
+        [style.opacity]="imageOpacity"
+        [style.transform]="'translateX(' + imageOffset + 'px)'"
+        (transitionend)="onTransitionEnd()"/>
     </section>
 </main>

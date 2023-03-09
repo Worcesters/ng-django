@@ -16,6 +16,7 @@ import { ExperienceComponent } from './components/experience/experience.componen
 import { CrashtestComponent } from './components/crashtest/crashtest.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { WindowScrollService } from './services/window-scroll.service';
 
 @NgModule({
   declarations: [
@@ -40,11 +41,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   exports:[],
   providers: [
-    // {
-    //   provide: HTTP_INTERCEPTORS,
-    //   useClass: CorsInterceptor,
-    //   multi: true
-    // },
+    WindowScrollService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
