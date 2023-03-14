@@ -6,15 +6,11 @@ main section{
     flex-direction: row;
     justify-content: space-between;
 }
-
 main section article{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 100%
-}
-main section article div{
-    margin: 1rem 0 2rem 0;
 }
 main section article > div {
     display: flex;
@@ -22,105 +18,114 @@ main section article > div {
     flex-direction: row;
     justify-content: space-between;
 }
-main section article div p{
-    letter-spacing: 2px;
-}
-main section article div ul{
-    text-decoration: none;
-    font-weight: 600;
-    width: 20vw;
-    min-width: 200px;
-    text-transform: uppercase;
-}
-main section article div ul li{
-    display: flex;
-    border: solid 1px #666;
-    align-items: center;
-    border-radius: 5px;
-    margin: 1rem 0;
+main section article div.card {
     position: relative;
-    background: #ffffff;
+    width: 350px;
+    height: 190px;
+    background-color: #fff;
+    transition: 0.5s;
+    margin: 100px 0 0 0;
 }
-main section article div ul li span {
-    background: linear-gradient(
-        to right,
-        #20c960,
-        #2d998f
-    );
-    min-height: 50px;
-    align-self: center;
-    width: 50px;
-    margin-right: 2rem;
-    border-radius: 2px;
+main section article div.card:hover {
+    height: 450px;
 }
-/*Bookmark*/
-
-.ribbon-bookmark.ribbon-top {
-    padding-right: 0;
-    padding-bottom: 0.25rem;
-    padding-left: 0;
-    border-radius: 0 5px 0 0;
-}
-.ribbon.bg-green {
-    border-color: #4c7b80;
-}
-.ribbon-top {
-    right: 0.75rem;
-}
-.ribbon:before {
+main section article div.card .lines {
     position: absolute;
-    width: 0;
-    height: 0;
+    inset: 0;
+    background-color: #000;
+    overflow: hidden;
+}
+main section article div.card .imgBx {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 150px;
+    background-color: #000;
+    transition: 0.5s;
+    z-index: 10;
+    overflow: hidden;
+}
+main section article div.card:hover .imgBx {
+    width: 250px;
+    height: 250px;
+}
+main section article div.card .imgBx::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 150px;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(transparent, #d25cf0, #d25cf0, #d25cf0, transparent);
+    animation: animate2 6s linear infinite;
+}
+main section article div.card .imgBx::after {
     content: "";
-    filter: brightness(70%);
-}
-.ribbon-top:before {
-    top: 0;
-    right: 100%;
-    bottom: auto;
-    border-color: inherit;
-    border-top-color: transparent;
-    border-left-color: transparent;
-}
-.ribbon-bookmark.ribbon-top:after {
-    top: 100%;
-    right: 0;
-    left: 0;
-    border-color: inherit;
-    border-width: 1rem;
-    border-top-width: 0;
-    border-bottom-color: transparent;
-    border-bottom-width: 0.5rem;
-}
-.ribbon-bookmark:after {
     position: absolute;
-    top: 0;
-    right: 100%;
-    display: block;
-    width: 0;
-    height: 0;
-    content: "";
-    border: 1rem solid;
+    inset: 3px;
+    background-color: #292929;
 }
-
-.ribbon {
+main section article div.card .imgBx img {
     position: absolute;
-    top: -17px;
+    top: 10px;
+    left: 10px;
     z-index: 1;
-    padding: 0.25rem 0.75rem;
-    font-size: .625rem;
-    font-weight: 900;
-    line-height: 1;
-    color: #fff;
-    text-align: center;
-    text-transform: uppercase;
-    background: #4c7b80;
-    width: 2rem;
-    display: inline-flex;
-    align-items: center;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    filter: grayscale(1);
+}
+main section article div.card .lines::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:  translate(-50%, -50%);
+    width: 600px;
+    height: 120px;
+    background: linear-gradient(transparent, #45f3ff);
+    animation: animate 4s linear infinite;
+}
+main section article div.card .lines::after {
+    content: "";
+    position: absolute;
+    inset: 3px;
+    background-color: #292929;
+}
+main section article div.card .content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
     justify-content: center;
-    min-height: 2rem;
-    min-width: 2rem;
+    align-items: flex-end;
+    overflow: hidden;
+}
+main section article div.card .content .details {
+    padding: 40px;
+    text-align: center;
+    width: 100%;
+    transition: 0.5s;
+    transform: translateY(0px);
+}
+/* main section article div.card:hover .content .details {
+    
+} */
+main section article div.card .content .details h2{
+    font-size: 1.25em;
+    font-weight: 600;
+    color: #45f3ff;
+    line-height: 1.2em;
+}
+main section article div.card:hover .content .details .data {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+main section article div p {
+    letter-spacing: 2px;
 }
 @media screen and (max-width: 1920px) {
     main h2 { font-size: 1.8rem; }
@@ -141,3 +146,25 @@ main section article div ul li span {
     }
 }
 
+@keyframes animate
+{
+    0%
+    {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100%
+    {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+@keyframes animate2
+{
+    0%
+    {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+    100%
+    {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+}

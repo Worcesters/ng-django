@@ -17,7 +17,6 @@ main section img{
 }
 .sliding-image {
     position: absolute;
-    
     right: 0;
     width: 500px;
     height: 500px;
