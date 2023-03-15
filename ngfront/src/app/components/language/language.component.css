@@ -18,7 +18,7 @@ main section article > div {
     flex-direction: row;
     justify-content: space-between;
 }
-main section article div.card {
+main section article div div.card  {
     position: relative;
     width: 350px;
     height: 190px;
@@ -26,16 +26,16 @@ main section article div.card {
     transition: 0.5s;
     margin: 100px 0 0 0;
 }
-main section article div.card:hover {
+main section article div div.card:hover {
     height: 450px;
 }
-main section article div.card .lines {
+main section article div div.card .lines {
     position: absolute;
     inset: 0;
     background-color: #000;
     overflow: hidden;
 }
-main section article div.card .imgBx {
+main section article div div.card .imgBx {
     position: absolute;
     top: -50px;
     left: 50%;
@@ -47,11 +47,11 @@ main section article div.card .imgBx {
     z-index: 10;
     overflow: hidden;
 }
-main section article div.card:hover .imgBx {
+main section article div div.card:hover .imgBx {
     width: 250px;
     height: 250px;
 }
-main section article div.card .imgBx::before {
+main section article div div.card .imgBx::before {
     content: '';
     position: absolute;
     top: 50%;
@@ -62,13 +62,13 @@ main section article div.card .imgBx::before {
     background: linear-gradient(transparent, #d25cf0, #d25cf0, #d25cf0, transparent);
     animation: animate2 6s linear infinite;
 }
-main section article div.card .imgBx::after {
+main section article div div.card .imgBx::after {
     content: "";
     position: absolute;
     inset: 3px;
     background-color: #292929;
 }
-main section article div.card .imgBx img {
+main section article div div.card .imgBx img {
     position: absolute;
     top: 10px;
     left: 10px;
@@ -77,7 +77,7 @@ main section article div.card .imgBx img {
     height: calc(100% - 20px);
     filter: grayscale(1);
 }
-main section article div.card .lines::before {
+main section article div div.card .lines::before {
     content: "";
     position: absolute;
     top: 50%;
@@ -85,16 +85,16 @@ main section article div.card .lines::before {
     transform:  translate(-50%, -50%);
     width: 600px;
     height: 120px;
-    background: linear-gradient(transparent, #45f3ff);
+    background: linear-gradient(transparent, #2ee4cb);
     animation: animate 4s linear infinite;
 }
-main section article div.card .lines::after {
+main section article div div.card .lines::after {
     content: "";
     position: absolute;
-    inset: 3px;
+    inset: 10px;
     background-color: #292929;
 }
-main section article div.card .content {
+main section article div div.card .content {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -103,23 +103,23 @@ main section article div.card .content {
     align-items: flex-end;
     overflow: hidden;
 }
-main section article div.card .content .details {
+main section article div div.card .content .details {
     padding: 40px;
     text-align: center;
     width: 100%;
     transition: 0.5s;
     transform: translateY(0px);
 }
-/* main section article div.card:hover .content .details {
+/* main section article div div.card :hover .content .details {
     
 } */
-main section article div.card .content .details h2{
+main section article div div.card .content .details h2{
     font-size: 1.25em;
     font-weight: 600;
     color: #45f3ff;
     line-height: 1.2em;
 }
-main section article div.card:hover .content .details .data {
+main section article div div.card:hover .content .details .data {
     display: flex;
     justify-content: space-between;
     margin: 20px 0;
