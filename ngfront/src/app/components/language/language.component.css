@@ -17,6 +17,7 @@ main section article > div {
     width: 100%;
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 main section article div div.card  {
     position: relative;
@@ -87,6 +88,12 @@ main section article div div.card .lines::before {
     height: 120px;
     background: linear-gradient(transparent, #2ee4cb);
     animation: animate 4s linear infinite;
+}
+main section article div div.card .lines.medium::before {
+    background: linear-gradient(transparent, #d15bf2);
+}
+main section article div div.card .lines.low::before {
+    background: linear-gradient(transparent, #ae7946);
 }
 main section article div div.card .lines::after {
     content: "";
