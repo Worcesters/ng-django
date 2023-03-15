@@ -18,7 +18,7 @@ footer div div p{
     font-weight: 600;
 }
 footer div:nth-last-child(2) h4{
-    color: #2ee4cb;
+    color: var(--primary_color);
     font-weight: 600;
 }
 footer div div, footer div h4,h3{
@@ -30,7 +30,7 @@ footer div h4{
     cursor: pointer;
 }
 footer div div:last-child{
-    color: #2ee4cb;
+    color: var(--primary_color);
     font-weight: 600;
     text-transform: uppercase;
     cursor: pointer;

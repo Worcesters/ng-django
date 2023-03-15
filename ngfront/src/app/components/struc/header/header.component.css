@@ -12,13 +12,13 @@ header nav a{
     align-self: center;
     text-decoration: none;
     font-weight: 600;
-    color: #3e3f46;
+    color: var(--text_color);
     cursor: pointer;
 }
 
 header nav a:last-child{
     color: #FFFFFF;
-    background-color: #2ee4cb;
+    background-color: var(--primary_color);
     border-radius: 2rem;
 }
 header .sidebarIconToggle{

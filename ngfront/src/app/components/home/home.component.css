@@ -1,9 +1,3 @@
-main section{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-bottom: 10vh;
-}
 main section img{
     width: 600px;
     height: 610px;
@@ -64,7 +58,7 @@ main section article div p{
     letter-spacing: 2px;
 }
 main section article div div:last-child{
-    border: solid 1px #3e3f46;
+    border: solid 1px var(--text_color);
     width: fit-content;
     padding: 1.5vh 5vh;
     border-radius: 2rem;

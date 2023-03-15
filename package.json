@@ -1,5 +1,8 @@
 {
   "dependencies": {
     "@angular/animations": "^15.1.1"
+  },
+  "devDependencies": {
+    "node-sass": "^8.0.0"
   }
 }

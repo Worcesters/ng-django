@@ -1,16 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Oswald:400,700');
-
-main section{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-main section article{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
 main section article>div{
     width: 35vw;
     margin: 1rem 0 4rem 0;
@@ -20,7 +7,7 @@ main section article div p{
     margin: 2rem 0;
 }
 main section article div div.btn_fake{
-    border: solid 1px #3e3f46;
+    border: solid 1px var(--text_color);
     width: fit-content;
     padding: 1rem 4rem;
     border-radius: 2rem;
@@ -43,7 +30,7 @@ ul li::before{
     height: 100%;
     top: 0;
     left: -40px;
-    background-color: #2e3133;
+    background-color: var(--lightgrey_color);
     transform-origin: right;
     transform: skewY(45deg);
 }
@@ -74,14 +61,14 @@ ul li{
     list-style: none;
     width: 200px;
     cursor: pointer;
-    background-color: #3e3f46;
+    background-color: var(--text_color);
     padding: 15px;
     z-index: var(--i);
     transition: 0.5s;
 }
 
 ul li:hover{
-    background-color: #2ee4cb;
+    background-color: var(--primary_color);
     transform: translateX(-50px);
 }
 
@@ -171,33 +158,7 @@ main section article div.scene {
     background-repeat: no-repeat;
     right: 0;
 }
-@-webkit-keyframes driftCube 
-{
-    from
-    {
-        -webkit-transform: translate3d(0, 0, 0);
-                transform: translate3d(0, 0, 0);
-    }
-    to
-    {
-        -webkit-transform: translate3d(-100vw, 0, 0);
-                transform: translate3d(-200vw, 0, 0);
-    }
-}
 
-@keyframes driftCube 
-{
-    from 
-    {
-        -webkit-transform: translate3d(0, 0, 0);
-                transform: translate3d(0, 0, 0);
-    }
-    to
-    {
-        -webkit-transform: translate3d(-100vw, 0, 0);
-                transform: translate3d(-200vw, 0, 0);
-    }
-}
 .cube__face--back{ background-image:url('/assets/img/php.png');background-size: cover;}
 
 .cube__face--left{ 
