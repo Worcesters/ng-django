@@ -5,41 +5,42 @@ main section article > div {
     justify-content: space-between;
     flex-wrap: wrap;
 }
-main section article div div.card  {
+main section article div div.card-container {
+    position: relative;
+    z-index: 1;
+}
+main section article div div.card-container div.card {
     position: relative;
     width: 350px;
     height: 190px;
-    background-color: #fff;
+    background-color: var(--white);
     transition: 0.5s;
     margin: 100px 0 0 0;
+    box-shadow: 1px 1px 12px var(--text_color);
 }
-main section article div div.card:hover {
-    height: 450px;
-    z-index: 10;
-}
-main section article div div.card .lines {
+main section article div div.card-container div.card .lines {
     position: absolute;
     inset: 0;
-    background-color: #000;
+    background-color: var(--black_color);
     overflow: hidden;
 }
-main section article div div.card .imgBx {
+main section article div div.card-container div.card .imgBx {
     position: absolute;
     top: -50px;
     left: 50%;
     transform: translateX(-50%);
     width: 150px;
     height: 150px;
-    background-color: #000;
+    background-color: var(--black_color);
     transition: 0.5s;
     z-index: 10;
     overflow: hidden;
 }
-main section article div div.card:hover .imgBx {
+main section article div div.card-container div.card:hover .imgBx {
     width: 250px;
     height: 250px;
 }
-main section article div div.card .imgBx::before {
+main section article div div.card-container div.card .imgBx::before {
     content: '';
     position: absolute;
     top: 50%;
@@ -50,13 +51,13 @@ main section article div div.card .imgBx::before {
     background: linear-gradient(transparent, var(--secondary_color), var(--secondary_color), var(--secondary_color), transparent);
     animation: animate2 6s linear infinite;
 }
-main section article div div.card .imgBx::after {
+main section article div div.card-container div.card .imgBx::after {
     content: "";
     position: absolute;
     inset: 3px;
     background-color: #292929;
 }
-main section article div div.card .imgBx img {
+main section article div div.card-container div.card .imgBx img {
     position: absolute;
     top: 10px;
     left: 10px;
@@ -65,58 +66,47 @@ main section article div div.card .imgBx img {
     height: calc(100% - 20px);
     filter: grayscale(1);
 }
-main section article div div.card .lines::before {
+main section article div div.card-container div.card .lines::before {
     content: "";
     position: absolute;
     top: 50%;
     left: 50%;
     transform:  translate(-50%, -50%);
-    width: 600px;
-    height: 120px;
+    width: 400px;
+    height: 400px;
     background: linear-gradient(transparent, var(--primary_color));
     animation: animate 4s linear infinite;
 }
-main section article div div.card .lines.medium::before {
+main section article div div.card-container div.card .lines.medium::before {
     background: linear-gradient(transparent, var(--secondary_color));
 }
-main section article div div.card .lines.low::before {
+main section article div div.card-container div.card .lines.low::before {
     background: linear-gradient(transparent, var(--third_color));
 }
-main section article div div.card .lines.unknow::before {
+main section article div div.card-container div.card .lines.unknow::before {
     background: linear-gradient(transparent, var(--secondary_complementary_color));
 }
-main section article div div.card .lines::after {
+main section article div div.card-container div.card .lines::after {
     content: "";
     position: absolute;
     inset: 10px;
-    background-color: var(--lightgrey_color);
+    background-color: var(--lightblack_color);
 }
-main section article div div.card .content {
+main section article div div.card-container div.card .content {
     position: absolute;
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     overflow: hidden;
 }
-main section article div div.card .content .details {
-    padding: 40px;
-    text-align: center;
-    width: 100%;
-    transition: 0.5s;
-    transform: translateY(0px);
-}
-main section article div div.card .content .details h2{
+
+main section article div div.card-container div.card .content h2{
     font-size: 1.25em;
     font-weight: 600;
     color: var(--primary_complementary_color);
     line-height: 1.2em;
-}
-main section article div div.card:hover .content .details .data {
-    display: flex;
-    justify-content: space-between;
-    margin: 20px 0;
 }
 main section article div p {
     letter-spacing: 2px;
