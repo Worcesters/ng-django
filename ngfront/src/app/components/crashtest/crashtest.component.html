@@ -18,10 +18,16 @@
            </div>
             <div>
                 <h2> Gally lth iadud </h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce placerat velit sit amet tortor rutrum laoreet. 
-                    Donec sed porta purus, in porta erat. Maecenas iaculis, eros at ullamcorper accumsan, eros dui
-                </p>
+                <div class="chatbox">
+                    <div *ngFor="let message of messages">
+                      <div class="message" *ngIf="message.type === 'user'">{{ message.text }}</div>
+                      <div class="message" *ngIf="message.type === 'bot'">{{ message.text }}</div>
+                    </div>
+                    <div class="input">
+                      <input type="text" [(ngModel)]="question" placeholder="Posez une question...">
+                      <button (click)="sendMessage()">Envoyer</button>
+                    </div>
+                  </div>                  
             </div>
 
             <div>

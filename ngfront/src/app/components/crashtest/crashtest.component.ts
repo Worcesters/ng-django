@@ -1,12 +1,28 @@
 import { Component } from '@angular/core';
+import { ChatbotService } from 'src/app/services/chatbot.service';
 
 @Component({
   selector: 'app-crashtest',
   templateUrl: './crashtest.component.html',
   styleUrls: [ './crashtest.component.css' ]
 })
+
 export class CrashtestComponent {
   val: string = ""
+  question: string = '';
+  answer: string = '';
+  messages: any[] = [];
+
+  constructor(private chatbotService: ChatbotService) { }
+
+  sendMessage() {
+    this.chatbotService.askQuestion(this.question).subscribe((response: any) => {
+      this.answer = response.message;
+      this.messages.push({ type: 'user', text: this.question }); // Ajout du message de l'utilisateur
+      this.messages.push({ type: 'bot', text: response.message }); // Ajout de la réponse du chatbot
+      this.question = '';
+    });
+  }
 
   changeSide(hoverVal: string = ""){
     if(hoverVal == 'html' || hoverVal == 'css'){
