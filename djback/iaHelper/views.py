@@ -14,7 +14,7 @@ model_engine = "text-davinci-002"
 def chatbot(request):
     if request.method == 'POST':
         message = json.loads(request.body)['message']
-        prompt = f'Conversation with user: {message}\nAI Response:'
+        prompt = f'Conversation avec utilisateur: {message}\nReponse IA:'
         completions = openai.Completion.create(
             engine=model_engine,
             prompt=prompt,
