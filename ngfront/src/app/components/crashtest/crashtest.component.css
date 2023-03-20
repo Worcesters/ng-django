@@ -30,17 +30,17 @@ ul li::before{
     height: 100%;
     top: 0;
     left: -40px;
-    background-color: var(--lightgrey_color);
+    background-color: var(--lightblack_color);
     transform-origin: right;
     transform: skewY(45deg);
 }
 
 ul li:hover::before{
-    background-color: #2f8378;
+    background-color: var(--primaryShadow_color);
 }
 
 ul li:hover::after{
-    background-color: #30c2ae;
+    background-color: var(--primary_color);
 }
 
 ul li::after{
@@ -50,7 +50,7 @@ ul li::after{
     height: 40px;
     top: -40px;
     left: -20px;
-    background-color: #35383e;
+    background-color: var(--lightblack_color);
     transform-origin: right;
     transform: skewX(45deg);
     transition: 0.5s;
@@ -74,14 +74,14 @@ ul li:hover{
 
 ul li a{
     text-decoration: none;
-    color: #999;
+    color: var(--white_color);
     text-transform: uppercase;
     letter-spacing: 0.05em;
     transition: 0.5s;
 }
 
 ul li:hover a{
-    color: #FFFFFF;
+    color: var(--white_color);
 }
 
 ul li:last-child::after{
@@ -124,11 +124,11 @@ main section article div.scene {
     position: absolute;
     width: 20vw;
     height: 10vw;
-    border: 2px solid black;
+    border: 2px solid var(--black_color);
     line-height: 500px;
     font-size: 40px;
     font-weight: bold;
-    color: white;
+    color: var(--white_color);
     text-align: center;
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px 0 rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
     transform-style: preserve-3d;
@@ -137,7 +137,7 @@ main section article div.scene {
     position: absolute;
     width: 10vw;
     height: 10vw;
-    border: 2px solid black;
+    border: 2px solid var(--black_color);
     line-height: 500px;
     font-size: 40px;
     font-weight: bold;

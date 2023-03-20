@@ -1,12 +1,15 @@
 :root {
     --home_bg_color: #e7eded;
-    --bg8Linear_color: to right, #efefef,#e7eded,#c5d8d5 ;
+    --bg_Linear_color: to right, #efefef,#e7eded,#c5d8d5 ;
     --primary_color: #2ee4cb;
+    --primaryShadow_color: #2f8378;
     --secondary_color: #d15bf2;
     --third_color: #ae7946;
     --primary_complementary_color: #45f3ff;
     --secondary_complementary_color: #bb310a;
     --text_color: #3e3f46;
-    --lightgrey_color: #292929;
+    --lightblack_color: #292929;
+    --black_color: #000000;
+    --white_color: #FFFFFF;
 }
   
