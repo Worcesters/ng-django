@@ -19,11 +19,35 @@ def chatbot(request):
     if request.method != 'POST':
         return HttpResponseBadRequest('Invalid method')
 
-    prompt = json.loads(request.body.decode('utf-8'))['question']
+    
 
     try:
+        prompt = json.loads(request.body.decode('utf-8'))['question']
+
+        default_prompt = ""
+        default_prompt += " Voici qui est didier jeremy actuellement en 2023 il à 26 ans developpeur depuis plus de 3ans maintenant." 
+        default_prompt += " Il possède un interet pour les nouvelles technologies & le developpement en tout genre, les languages qu'il maitrises sont nombreux, notamment : css, html, javascript, python, django, php, angular, sql."
+        default_prompt += " Ces languages préferé sont le Html, Css, javascript coté front & Python Django pour le back en effet il à une préférence pour le front car ce coté visuel et intéractif lui plait"
+        default_prompt += " Malgré tout, cela reste un plaisir pour lui de pouvoir intervenir entant que fullstack et ne pas être restrein pas ces propre limite comme la majorité des intégrateurs ou developpeur front."
+        default_prompt += " Ces Formations: Issue de formation diplomante au sein de la 3W ACADEMY il a commencé par obtenir sont diplome de developpeur en réalisation d'application web"
+        default_prompt += " Il a pu apprendre les languages 'basiques' tel que HTML, CSS, JAVASCRIPT, PHP, AJAX, BOOSTRAP, JQUERY, SQL cette premiere formation lui a permis d'obtenir un équivalent BAC + 2"
+        default_prompt += " Deuxieme formation des suites du covid il a décidé de laisser passer le temps et d'en profiter pour découvrir de nouveau languages en se relancant une formation et d'obtenir le titre de Developpeur en intelligence artificielle"
+        default_prompt += " Dans cette formation il a pu apprendre notamment le Python et Tensorflow. et obtenir un équivalent bac + 3 sont meilleur diplome actuellement"
+        default_prompt += " Ces Expériences: Après avoir obtenu le titre de develeppeur en realisation d'application web il a effectuer un stage au sein de DigiFactory une entreprise d'evenementiel au seins de cette entreprise"
+        default_prompt += " Il a obtenu enormement d'experience etant un pilier de cette startup qui lui a très vite donner de grande responsabilité parmis ces missions il était notamment Chef de projet, developpeur front, gestion helpdesk, creation d'emailing et de gabarit d'emailing"
+        default_prompt += " Raison de sont départ de DigiFactory, une envie de progression etant au debut de ca carriere il a prefere ne pas rester figer sur les languages de base et en apprendres d'avantages avant de ce décider sur ces favoris"
+        default_prompt += " Ca deuxieme expérience fut dans une entreprise nommé IWI-EVENT toujours dans l'evenementiel cette fois entant que simple developpeur FrontEnd ces missions developper les differentes web app ou site webs d'inscription, et creation des emailings liée a celui ci"
+        default_prompt += " Ces languages pratiquer chez IWI-EVENT , HTML, CSS, JAVASCRIPT, ANGULARJS, PHP, SQL"
+        default_prompt += " Malgré le faite qu'il allait obtenir ca propre equipe et passer chef de projet le covid a frapper & malheureusement lors du covid plus d'evenement causant ainsi la chute de la progression de cette startup"
+
+        journal_message = [
+            {"role": "assistant", "content": default_prompt}, 
+            {"role": "user", "content": prompt}, 
+            {"role": "assistant", "content": prompt}
+        ]
+        
         if (len(aResults) > 0) :
-            journal_message = []
+
             for i in aResults:
                 journal_result = i['result']
                 journal_prompt = i['prompt']
@@ -40,7 +64,7 @@ def chatbot(request):
         else :
             completion = openai.ChatCompletion.create(
                 model = model_engine, 
-                messages = [{"role": "user", "content": prompt},{"role": "assistant", "content": prompt}]
+                messages = journal_message
             )
 
         result = completion['choices'][0]['message']['content']
