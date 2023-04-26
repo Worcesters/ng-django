@@ -1,32 +1,57 @@
 import json
 import requests
 import openai
+from openai.error import RateLimitError
 from django.conf import settings
-from django.http import JsonResponse
+from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseServerError
 from django.views.decorators.csrf import csrf_exempt
 
 
 openai.api_key = settings.OPENAI_API_KEY
-model_engine = "text-davinci-002"
-#gpt-3.5-turbo
+openai.organization = ""
+openai.Model.list()
+model_engine = "gpt-3.5-turbo"
+aResults = []
+temperature = 0.7
 
 @csrf_exempt
 def chatbot(request):
-    if request.method == 'POST':
-        message = json.loads(request.body)['message']
-        prompt = f'Conversation avec utilisateur: {message}\nReponse IA:'
-        completions = openai.Completion.create(
-            engine=model_engine,
-            prompt=prompt,
-            max_tokens=1000,
-            temperature=0.7
-        )
-    response_text = completions.choices[0].text.strip()
-    iaAvatar(response_text)
+    if request.method != 'POST':
+        return HttpResponseBadRequest('Invalid method')
 
-    return JsonResponse({'message': response_text})
+    prompt = json.loads(request.body.decode('utf-8'))['question']
 
-def iaAvatar(gpt_response):
+    try:
+        if (len(aResults) > 0) :
+            journal_message = []
+            for i in aResults:
+                journal_result = i['result']
+                journal_prompt = i['prompt']
+
+                journal_message.append({"role": "user", "content": journal_prompt})
+                journal_message.append({"role": "assistant", "content": journal_result})
+
+            journal_message.append({"role": "user", "content": prompt})
+            
+            completion = openai.ChatCompletion.create(
+                model = model_engine, 
+                messages = journal_message
+            )
+        else :
+            completion = openai.ChatCompletion.create(
+                model = model_engine, 
+                messages = [{"role": "user", "content": prompt},{"role": "assistant", "content": prompt}]
+            )
+
+        result = completion['choices'][0]['message']['content']
+        aResults.append({'prompt': prompt, 'result': result})
+        response = HttpResponse(json.dumps({'message': result}), content_type="application/json; charset=utf-8")
+
+        return response
+    except RateLimitError as e :
+        return HttpResponseServerError("openai.error.RateLimitError: " + str(e))
+
+def iaAvatar( gpt_response ):
     
     url = "https://api.d-id.com/talks"
 
