@@ -17,25 +17,31 @@
                </div>
            </div>
             <div>
-                <h2> Gally lth iadud </h2>
-                <div class="chatbox">
-                    <div *ngFor="let message of messages">
-                      <div class="message" *ngIf="message.type === 'user'">{{ message.text }}</div>
-                      <div class="message" *ngIf="message.type === 'bot'">{{ message.text }}</div>
+                <h2> Assistance </h2>
+                <div class="chat-container">
+                    <div>
+                        <video autoplay src="../../../assets/img/avatar_ia/presentation_cortana.mp4">IA vidéo généré par D-ID</video>
                     </div>
-                    <div class="input">
-                      <input type="text" [(ngModel)]="question" placeholder="Posez une question...">
+                    
+                    <div *ngFor="let message of messages">
+                        <div [ngClass]="{'user-message': message.type === 'user', 'bot-message': message.type === 'bot'}">
+                            {{message.text}}
+                        </div>
+                    </div>
+                  
+                    <div class="chat-input">
+                      <input [(ngModel)]="question" type="text" placeholder="Posez une question...">
                       <button (click)="sendMessage()">Envoyer</button>
                     </div>
-                  </div>                  
+                </div>              
             </div>
 
             <div>
-                <h3> Back-End </h3>
+                <h3> Information d'utilisation </h3>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce placerat velit sit amet tortor rutrum laoreet. 
-                    Donec sed porta purus, in porta erat. Maecenas iaculis, eros at ullamcorper accumsan, eros dui elementum augue, 
-                    vitae congue ante arcu ac velit. Nunc at quam felis. Maecenas ante diam, feugiat in nisi sed, finibus egestas
+                    N'hésitez pas à poser des questions sur mon parcours.<br>
+                    Exemple : "Qui est didier jeremy"<br>
+                    Cette IA n'a pas n'est pas de ma réalisation il s'agit de l'api de ChatGpt
                 </p>
             </div>
         </article>

@@ -18,9 +18,7 @@ ul{
     position: relative;
     transform: skewY(-15deg);
     transition: 0.5s;
-    align-self: center;
-    margin-bottom: 24vh;
-    margin-right: 25vw;
+    margin-top: 10vh;
 }
 
 ul li::before{
@@ -87,6 +85,85 @@ ul li:hover a{
 ul li:last-child::after{
     box-shadow: -120px 120px 20px rgba(0,0,0,0.25);
 }
+
+/*Chatbox*/
+/* Style de la zone de chat */
+.chat-container {
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+    box-shadow: 0px 2px 2px #F2F2F2;
+    padding: 10px;
+}
+
+.chat-container div {
+    display: flex;
+    font-family: system-ui;
+}
+
+.chat-container video {
+    border-radius: 50%;
+    width: 10rem;
+    margin: 0 auto;
+}
+
+/* Style des messages de l'utilisateur */
+.chat-container .user-message {
+    background-color: #E0F2F1;
+    border-radius: 10px;
+    color: #000000;
+    display: inline-block;
+    font-size: 16px;
+    max-width: 80%;
+    padding: 10px;
+    margin: 10px;
+}
+
+/* Style des messages de l'assistant */
+.chat-container .bot-message {
+    background-color: #B2DFDB;
+    border-radius: 10px;
+    color: #000000;
+    display: inline-block;
+    font-size: 16px;
+    max-width: 80%;
+    padding: 10px;
+}
+
+/* Style de la zone de saisie de texte */
+.chat-input {
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+    box-shadow: 0px 2px 2px #F2F2F2;
+    padding: 10px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.chat-input input {
+    border: none;
+    width: 100%;
+    outline: 0;
+}
+
+.chat-input input {
+    box-shadow: 0 0 0 0.15rem rgba(255, 255, 255, 0.25);
+    font-size: 1.5em;
+    font-family: system-ui;
+}
+/* Style du bouton d'envoi */
+.chat-input button {
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    color: #FFFFFF;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 14px;
+}
+  
   
 /*Cube isometric*/
 
@@ -97,7 +174,6 @@ main section article div.scene {
     -webkit-perspective: 2000px;
             perspective: 2000px;
     margin-right: 10vw;
-    align-self: center;
 }
 .cube {
     width: 20vw;
