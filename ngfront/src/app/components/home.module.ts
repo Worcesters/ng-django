@@ -9,7 +9,7 @@ import { CrashtestComponent } from './crashtest/crashtest.component';
 
 const home: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'languages', component: LanguageComponent },
+  // { path: 'languages', component: LanguageComponent },
   { path: 'experiences', component: ExperienceComponent },
   { path: 'login', component: LoginComponent },
   { path: 'crash', component: CrashtestComponent }
