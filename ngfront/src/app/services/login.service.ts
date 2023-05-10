@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 import { Observable, of, throwError, BehaviorSubject } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
-import { UserType, UserApiType, baseUrl } from '../models/login.model';
+import { UserType, UserApiType, baseUrlApi } from '../models/api.model';
 import { Router } from '@angular/router';
 import { NotificationService } from './notification.service';
 
@@ -32,7 +32,7 @@ export class UserService {
 
 		let payload: UserApiType = { username: loginForm.username, password: loginForm.password }
 
-		return this.http.post<LoginResponse>( baseUrl + 'login', payload, httpOptions ).pipe(
+		return this.http.post<LoginResponse>( baseUrlApi + 'login', payload, httpOptions ).pipe(
 		  tap( ( response: LoginResponse ) => {
 				if( response.status === 200 ){
 					localStorage.setItem( 'token', response.token );
@@ -69,7 +69,7 @@ export class UserService {
 
 	registerVisitor( loginForm: UserType ): Observable<any> {
 		let payload: UserApiType = { username: loginForm.username, password: loginForm.password } 
-		return this.http.post( baseUrl + 'visitor/', payload );
+		return this.http.post( baseUrlApi + 'visitor/', payload );
   }
 	
 }

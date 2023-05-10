@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { baseUrl } from '../models/login.model';
+import { baseUrlApi } from '../models/api.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ChatbotService {
 
-  private apiUrl: string = baseUrl + 'chatbot/';
+  private apiUrl: string = baseUrlApi + 'chatbot/';
 
   constructor(private http: HttpClient) { }
 

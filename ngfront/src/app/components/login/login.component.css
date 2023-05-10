@@ -14,8 +14,9 @@
 }
 .shape:first-child{
     background: linear-gradient(
-        #10928c,
-        #2ee4cb
+        #bcfff6,
+        #2ee4cb,
+        #016154
     );
     left: -80px;
     top: -80px;
@@ -23,8 +24,9 @@
 .shape:last-child{
     background: linear-gradient(
         to right,
+        #5f0bb9,
         #8a4ccc,
-        #d25aef
+        rgb(232, 215, 236)
     );
     right: -30px;
     bottom: -80px;
@@ -34,6 +36,10 @@ section{
     justify-content: center;
     position: relative;
 }
+.shape {
+    animation: rotate 10s infinite linear;
+}
+  
 form{
     width: 400px;
     background-color: rgba(12, 12, 12, 0.7);

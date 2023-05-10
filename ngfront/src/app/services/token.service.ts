@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, map,of } from 'rxjs';
-import { baseUrl } from '../models/login.model';
+import { baseUrlApi } from '../models/api.model';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,7 @@ export class TokenService {
 
   // Méthode pour vérifier la validité du jeton
   validateToken( token: string ): Observable<boolean> {
-    return token === "" ? of(false) : this.http.get<{valid: boolean}>(baseUrl + `isAuthenticated?token=${token}`)
+    return token === "" ? of(false) : this.http.get<{valid: boolean}>(baseUrlApi + `isAuthenticated?token=${token}`)
     .pipe(
         map(response => response.valid)
     );
