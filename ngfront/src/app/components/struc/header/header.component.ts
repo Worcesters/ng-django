@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthGuard } from 'src/app/auth.guard'; // Import du service AuthGuard
-import { TokenService } from 'src/app/services/token.service'; // Import du service TokenService
-import { UserService } from 'src/app/services/login.service';
+import { AuthGuard } from 'app/auth.guard'; // Import du service AuthGuard
+import { TokenService } from 'app/services/token.service'; // Import du service TokenService
+import { UserService } from 'app/services/login.service';
 
 @Component({
   selector: 'app-header',

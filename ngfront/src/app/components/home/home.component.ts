@@ -1,6 +1,6 @@
 import { Component, Input, HostListener } from '@angular/core';
-import { NotificationService } from 'src/app/services/notification.service';
-import { WindowScrollService } from 'src/app/services/window-scroll.service'
+import { NotificationService } from 'app/services/notification.service';
+import { WindowScrollService } from 'app/services/window-scroll.service'
 import { Subscription } from 'rxjs';
 
 @Component({

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ChatbotService } from 'src/app/services/chatbot.service';
+import { ChatbotService } from 'app/services/chatbot.service';
 
 @Component({
   selector: 'app-crashtest',
