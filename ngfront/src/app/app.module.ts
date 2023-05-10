@@ -15,8 +15,10 @@ import { TokenInterceptor } from './interceptor/token.interceptor';
 import { ExperienceComponent } from './components/experience/experience.component';
 import { CrashtestComponent } from './components/crashtest/crashtest.component';
 import { ToastrModule } from 'ngx-toastr';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WindowScrollService } from './services/window-scroll.service';
+
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import { WindowScrollService } from './services/window-scroll.service';
     HttpClientModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    PdfViewerModule
   ],
   exports:[],
   providers: [
