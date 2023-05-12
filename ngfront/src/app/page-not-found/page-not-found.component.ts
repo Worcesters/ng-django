@@ -1,5 +1,5 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { Orb } from './orb';
+import { Component, ElementRef, OnInit } from '@angular/core';
+import anime from 'animejs/lib/anime.es.js';
 
 @Component({
   selector: 'app-page-not-found',
@@ -7,53 +7,28 @@ import { Orb } from './orb';
   styleUrls: ['./page-not-found.component.css']
 })
 export class PageNotFoundComponent implements OnInit {
-  @ViewChild('orbCanvas', { static: true }) orbCanvas!: ElementRef<HTMLCanvasElement>;
-  private ctx!: CanvasRenderingContext2D;
-  private orbs: Orb[] = [];
+  constructor(private elementRef: ElementRef) {}
 
   ngOnInit(): void {
-    this.initializeCanvas();
-    this.createOrbs();
-    this.animate();
-  }
-
-  private initializeCanvas(): void {
-    const orbCanvasElement = this.orbCanvas.nativeElement;
-    this.ctx = orbCanvasElement.getContext('2d')!;
-    this.adjustCanvasSize();
-    window.addEventListener('resize', () => this.adjustCanvasSize());
-  }
-
-  private adjustCanvasSize(): void {
-    const orbCanvasElement = this.orbCanvas.nativeElement;
-    orbCanvasElement.width = orbCanvasElement.offsetWidth;
-    orbCanvasElement.height = orbCanvasElement.offsetHeight;
-    this.orbs.forEach(orb => orb.setBounds(orbCanvasElement.width, orbCanvasElement.height));
-  }
-
-  private createOrbs(): void {
-    const numOrbs = 10;
-    for (let i = 0; i < numOrbs; i++) {
-      const orb = new Orb(this.ctx, this.getRandomColor());
-      orb.setBounds(this.orbCanvas.nativeElement.width, this.orbCanvas.nativeElement.height);
-      this.orbs.push(orb);
-    }
-  }
-
-  private getRandomColor(): string {
-    const hue = Math.floor(Math.random() * 360);
-    const saturation = 95;
-    const lightness = 50;
-    return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
-  }
-
-  private animate(): void {
-    this.ctx.clearRect(0, 0, this.orbCanvas.nativeElement.width, this.orbCanvas.nativeElement.height);
-    this.orbs.forEach(orb => {
-      orb.update();
-      orb.render();
+    anime({
+      targets: '.row svg',
+      translateY: 10,
+      autoplay: true,
+      loop: true,
+      easing: 'easeInOutSine',
+      direction: 'alternate'
     });
 
-    requestAnimationFrame(() => this.animate());
+    anime({
+      targets: '#zero',
+      translateX: 10,
+      autoplay: true,
+      loop: true,
+      easing: 'easeInOutSine',
+      direction: 'alternate',
+      scale: [{ value: 1 }, { value: 1.4 }, { value: 1, delay: 250 }],
+      rotateY: { value: '+=180', delay: 200 }
+    });
   }
 }
+

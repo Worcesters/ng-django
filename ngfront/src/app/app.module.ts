@@ -17,6 +17,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WindowScrollService } from './services/window-scroll.service';
+//import { PageNotFoundDirective } from './directive/page_not_found.directive';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { WindowScrollService } from './services/window-scroll.service';
     LoginComponent,
     ExperienceComponent,
     CrashtestComponent,
+    //PageNotFoundDirective,
   ],
   imports: [
     BrowserModule,
